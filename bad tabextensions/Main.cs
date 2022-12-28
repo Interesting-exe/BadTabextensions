@@ -43,6 +43,7 @@ namespace bad_tabextensions
             }
                 
             _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            //tabs per row
             _gridLayoutGroup.constraintCount = 6;
         }
     }
