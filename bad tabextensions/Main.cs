@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Threading.Tasks;
 using MelonLoader;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
 
 namespace bad_tabextensions
