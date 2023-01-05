@@ -11,9 +11,15 @@ namespace bad_tabextensions
     {
         private static GridLayoutGroup _gridLayoutGroup = null;
         private static GameObject _horizontalLayoutGroup;
+        private static int _tabs;
         
         public override void OnInitializeMelon()
         {
+            MelonPreferences_Category category = MelonPreferences.CreateCategory("Bad Tabextensions");
+            category.CreateEntry("TabsPerRow", 7);
+            _tabs = MelonPreferences.GetEntryValue<int>(category.Identifier, "TabsPerRow");
+            MelonPreferences.Save();
+
             MelonCoroutines.Start(WaitForUI());
             base.OnInitializeMelon();
         }
@@ -43,7 +49,7 @@ namespace bad_tabextensions
             }
                 
             _gridLayoutGroup.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-            _gridLayoutGroup.constraintCount = 6;
+            _gridLayoutGroup.constraintCount = _tabs;
         }
     }
 }
